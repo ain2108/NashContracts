@@ -105,3 +105,4 @@ contract TwoThirdsAverage is Game {
 
 }
 
+

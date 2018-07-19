@@ -1,5 +1,14 @@
 pragma solidity ^0.4.23;
 
+/*
+
+!!!!!!!!!! LOGICAL IMPROVEMENTS !!!!!!!!!!!!
+1) Send money to HOME address only once the fees reach a certain amount.
+2) I have this idea of introducing a system of rounds so our players get a receit.
+They can then use this receit to look up info about their game.
+
+*/
+
 
 /*
 Dear all, games should inherit form this contract because this contract has the commit/reveal protocol
@@ -185,6 +194,16 @@ contract Game is Pausable, GameHelper {
         state.revealStageStartBlock,
         config.GAME_STAGE_LENGTH);
     }
+    // function getGameStateInfo() public view returns (
+    //     uint,uint,uint,uint,uint,uint
+    // ){
+    //     return (state.gameStateDebug,
+    //     state.currNumberCommits,
+    //     state.currNumberReveals,
+    //     state.commitStageStartBlock,
+    //     state.revealStageStartBlock,
+    //     config.GAME_STAGE_LENGTH);
+    // }
 
     function getGameStageLength() public view returns(uint) {
         return config.GAME_STAGE_LENGTH;
